@@ -1,0 +1,6 @@
+module.exports = {
+  dbUrl: 'mongodb://user:pwd@host:27017/mihua?authSource=admin', //MongoDB连接地址
+  listenPort: 80, //监听端口
+  privateKeyPath: 'keys/private.key', //为token使用RS256加密的私钥文件地址
+  publicKeyPath: 'keys/public.pem' //为token使用RS256加密的公钥文件地址
+}
