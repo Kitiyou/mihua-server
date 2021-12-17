@@ -19,6 +19,25 @@ exports.addWords = async function (req, res) {
     });
   }
 }
+//更新一个话语
+exports.updateWords = async function (req, res) {
+  let creatorId = req.userId;
+  let wordsId = parseInt(req.params.wordsid);
+  let { title, content, publishTime } = req.body;
+  let result = await Words.updateOne({ _id: wordsId, creatorId }, { title: title, content, publishTime })
+  if (result.matchedCount) {
+    res.json({
+      code: 0,
+      data: []
+    });
+  }
+  else {
+    res.json({
+      code: 102,
+      msg: '编辑话语失败'
+    });
+  }
+}
 
 //删除一个话语
 exports.removeWords = async function (req, res) {

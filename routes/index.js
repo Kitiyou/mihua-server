@@ -15,6 +15,8 @@ router.get('/mywords', userController.checkUser, wordsController.getMyAllWords);
 router.post('/words', userController.checkUser, wordsController.addWords);
 //删除话语
 router.delete('/words/:wordsid', userController.checkUser, wordsController.removeWords);
+//更新话语
+router.put('/words/:wordsid', userController.checkUser, wordsController.updateWords);
 //查看一个话语
 router.get('/words/:wordsid', wordsController.getWords);
 
